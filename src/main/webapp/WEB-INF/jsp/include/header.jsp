@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		<header class="d-flex align-items-center justify-content-between">
+			<h1 class="ml-3">Memo</h1>
+			<%-- session에 userId 가 값이 저장되어 있으면 로그아웃 링크 보내주기  --%>
+			<c:if test="${not empty userId }">
+			<div class="mr-3">${userName}님<a href="/user/signout">로그아웃</a></div>
+			</c:if>
+		</header>

@@ -24,7 +24,7 @@
 	
 		<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
-		<form id="loginForm"]>
+		<form id="loginForm">
 			<section class="content d-flex justify-content-center">
 				<div class="col-4 py-5">
 					<h1 class="text-center">로그인</h1>
@@ -45,8 +45,7 @@
 	<script>
 	$(document).ready(function() {
 		
-		$("#loginBtn").on("submit", function(e) {
-			
+		$("#loginForm").on("submit", function(e) {
 			// 해당하는 이벤트에 포함된 모든 기능을 중단한다 
 				e.preventDefault();
 			

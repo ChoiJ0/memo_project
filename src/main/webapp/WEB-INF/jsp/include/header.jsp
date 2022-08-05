@@ -5,6 +5,6 @@
 			<h1 class="ml-3">Memo</h1>
 			<%-- session에 userId 가 값이 저장되어 있으면 로그아웃 링크 보내주기  --%>
 			<c:if test="${not empty userId }">
-			<div class="mr-3">${userName}님<a href="/user/signout">로그아웃</a></div>
+			<div class="mr-3">${userName}님 <a href="/user/signout">로그아웃</a></div>
 			</c:if>
 		</header>

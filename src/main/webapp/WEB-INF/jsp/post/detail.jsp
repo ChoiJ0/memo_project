@@ -2,12 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메모 페이지</title>
+<title>메모 작성</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -25,36 +24,26 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<section class="d-flex justify-content-center">
-			<div class="col-7 my-4">
-				<h1 class="text-center">메모 리스트</h1>
-				<table class="table text-center mt-3">
-					<thead>
-						<tr>
-							<th>No.</th>
-							<th>제목</th>
-							<th>시간</th>							
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="memo" items="${memoList}">						
-							<tr>
-								<td>${memo.id}</td>
-								<td><a href="/post/detail/view?id=${memo.id}">${memo.subject}</a></td>
-								<td><fmt:formatDate value="${memo.createdAt}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-				
-				<div class="text-right">
-					<a href="/post/create/view" class="btn btn-info">글쓰기</a>
+			<div class="col-6 my-4">
+				<h1 class="text-center">메모 입력</h1>
+				<div class="d-flex justify-content-between mt-2">
+					<label>제목 :</label> 
+					<input type="text" class="form-control col-11" placeholder="제목을 입력해주세요." id="titleInput" value="${memo.subject}">
 				</div>
+				<textarea rows="5" class="form-control mt-2" placeholder="내용을 입력해주세요." id="contentInput">${memo.content}</textarea>
+				<div class="d-flex justify-content-between mt-3">
+					<div>
+						<a href="/post/list/view" class="btn btn-info">목록으로</a>				
+						<button type="button" class="btn btn-danger" id="deleteBtn">삭제</button>					
+					</div>
+					<button type="button" class="btn btn-info" id="saveBtn">수정</button>					
+				</div>
+				
 			</div>
 		
 		</section>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
-	
 </body>
 </html>

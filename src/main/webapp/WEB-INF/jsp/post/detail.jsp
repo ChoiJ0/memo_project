@@ -27,10 +27,15 @@
 			<div class="col-6 my-4">
 				<h1 class="text-center">메모 입력</h1>
 				<div class="d-flex justify-content-between mt-2">
-					<label>제목 :</label> 
+					<label>제목 :</label>
 					<input type="text" class="form-control col-11" placeholder="제목을 입력해주세요." id="titleInput" value="${memo.subject}">
 				</div>
 				<textarea rows="5" class="form-control mt-2" placeholder="내용을 입력해주세요." id="contentInput">${memo.content}</textarea>
+				
+				<div>
+					<img class="w-100 mt-3" src="${memo.imagePath}" >
+				</div>
+				
 				<div class="d-flex justify-content-between mt-3">
 					<div>
 						<a href="/post/list/view" class="btn btn-info">목록으로</a>				

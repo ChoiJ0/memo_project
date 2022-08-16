@@ -12,14 +12,16 @@
  				`userId`
  				, `subject`
  				, `content`
+ 				, `imagePath`
  				, `createdAt`
  				, `updatedAt`
  			)
  			VALUE
  			(
  				#{userId}
- 				,#{title}
+ 				, #{title}
  				, #{content}
+ 				, #{imagePath}
  				, now()
  				, now()
  			)
@@ -32,6 +34,7 @@
  				, `userId`
  				, `subject`
  				, `content`
+ 				, `imagePath`
  				, `createdAt`
  				, `updatedAt`
  			FROM
@@ -49,6 +52,7 @@
  				, `userId`
  				, `subject`
  				, `content`
+ 				, `imagePath`
  				, `createdAt`
  				, `updatedAt`
  			FROM
